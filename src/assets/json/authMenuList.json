@@ -16,20 +16,6 @@
       }
     },
     {
-      "path": "/dataScreen",
-      "name": "dataScreen",
-      "component": "/dataScreen/index",
-      "meta": {
-        "icon": "Histogram",
-        "title": "数据大屏",
-        "isLink": "",
-        "isHide": false,
-        "isFull": true,
-        "isAffix": false,
-        "isKeepAlive": true
-      }
-    },
-    {
       "path": "/proTable",
       "name": "proTable",
       "redirect": "/proTable/useProTable",
@@ -695,138 +681,6 @@
       ]
     },
     {
-      "path": "/menu",
-      "name": "menu",
-      "redirect": "/menu/menu1",
-      "meta": {
-        "icon": "List",
-        "title": "菜单嵌套",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/menu/menu1",
-          "name": "menu1",
-          "component": "/menu/menu1/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单1",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/menu/menu2",
-          "name": "menu2",
-          "redirect": "/menu/menu2/menu21",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单2",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          },
-          "children": [
-            {
-              "path": "/menu/menu2/menu21",
-              "name": "menu21",
-              "component": "/menu/menu2/menu21/index",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-1",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              }
-            },
-            {
-              "path": "/menu/menu2/menu22",
-              "name": "menu22",
-              "redirect": "/menu/menu2/menu22/menu221",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-2",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              },
-              "children": [
-                {
-                  "path": "/menu/menu2/menu22/menu221",
-                  "name": "menu221",
-                  "component": "/menu/menu2/menu22/menu221/index",
-                  "meta": {
-                    "icon": "Menu",
-                    "title": "菜单2-2-1",
-                    "isLink": "",
-                    "isHide": false,
-                    "isFull": false,
-                    "isAffix": false,
-                    "isKeepAlive": true
-                  }
-                },
-                {
-                  "path": "/menu/menu2/menu22/menu222",
-                  "name": "menu222",
-                  "component": "/menu/menu2/menu22/menu222/index",
-                  "meta": {
-                    "icon": "Menu",
-                    "title": "菜单2-2-2",
-                    "isLink": "",
-                    "isHide": false,
-                    "isFull": false,
-                    "isAffix": false,
-                    "isKeepAlive": true
-                  }
-                }
-              ]
-            },
-            {
-              "path": "/menu/menu2/menu23",
-              "name": "menu23",
-              "component": "/menu/menu2/menu23/index",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-3",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              }
-            }
-          ]
-        },
-        {
-          "path": "/menu/menu3",
-          "name": "menu3",
-          "component": "/menu/menu3/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单3",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
       "path": "/system",
       "name": "system",
       "redirect": "/system/accountManage",
@@ -941,84 +795,12 @@
       ]
     },
     {
-      "path": "/link",
-      "name": "link",
-      "redirect": "/link/gitee",
+      "path": "/reviewManage",
+      "name": "reviewManage",
+      "component": "/reviewManage/index",
       "meta": {
-        "icon": "Paperclip",
-        "title": "外部链接",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/link/gitee",
-          "name": "gitee",
-          "component": "/link/gitee/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "Gitee 仓库",
-            "isLink": "https://gitee.com/HalseySpicy/Geeker-Admin",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/github",
-          "name": "github",
-          "component": "/link/github/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "GitHub 仓库",
-            "isLink": "https://github.com/HalseySpicy/Geeker-Admin",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/geekerDocs",
-          "name": "geekerDocs",
-          "component": "/link/geekerDocs/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "项目文档",
-            "isLink": "https://docs.spicyboy.cn",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/juejin",
-          "name": "juejin",
-          "component": "/link/juejin/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "掘金主页",
-            "isLink": "https://juejin.cn/user/3263814531551816/posts",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
-      "path": "/about/index",
-      "name": "about",
-      "component": "/about/index",
-      "meta": {
-        "icon": "InfoFilled",
-        "title": "关于项目",
+        "icon": "Menu",
+        "title": "审核管理",
         "isLink": "",
         "isHide": false,
         "isFull": false,

@@ -1,0 +1,146 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "path": "/home/index",
+      "name": "home",
+      "component": "/home/index",
+      "meta": {
+        "icon": "HomeFilled",
+        "title": "首页",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": true,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/reviewManage",
+      "name": "reviewManage",
+      "component": "/reviewManage/index",
+      "meta": {
+        "icon": "Checked",
+        "title": "审核论文",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/reviewedPaper",
+      "name": "reviewedPaper",
+      "component": "/reviewedPaper/index",
+      "meta": {
+        "icon": "List",
+        "title": "已审核论文",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/onHoldedPaper",
+      "name": "onHoldedPaper",
+      "component": "/onHoldedPaper/index",
+      "meta": {
+        "icon": "CloseBold",
+        "title": "拒绝的论文",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/verifierManage",
+      "name": "verifierManage",
+      "component": "/verifierManage/index",
+      "meta": {
+        "icon": "Avatar",
+        "title": "审核员管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/usualUserManage",
+      "name": "usualUserManage",
+      "component": "/usualUserManage/index",
+      "meta": {
+        "icon": "UserFilled",
+        "title": "用户管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/statisticalInfo",
+      "name": "statisticalInfo",
+      "component": "/statisticalInfo/index",
+      "meta": {
+        "icon": "TrendCharts",
+        "title": "统计信息",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/dataDictionary/categoryManage",
+      "name": "categoryManage",
+      "component": "/dataDictionary/components/categoryManage/index",
+      "meta": {
+        "icon": "Management",
+        "title": "分类管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/dataDictionary/subjectManage",
+      "name": "subjectManage",
+      "component": "/dataDictionary/components/subjectManage/index",
+      "meta": {
+        "icon": "Management",
+        "title": "学科管理",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/paperDetail",
+      "name": "paperDetail",
+      "component": "/paperDetail/index",
+      "meta": {
+        "icon": "Document",
+        "title": "论文详情",
+        "isLink": "",
+        "isHide": true,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    }
+  ],
+  "msg": "成功"
+}

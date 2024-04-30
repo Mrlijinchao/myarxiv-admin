@@ -6,6 +6,11 @@ export interface Result {
 
 // 请求响应参数（包含data）
 export interface ResultData<T = any> extends Result {
+  meta: any;
+  message: any;
+  // [x: string]: any;
+  // [x: string]: any;
+  // [x: string]: any;
   data: T;
 }
 
@@ -33,7 +38,7 @@ export namespace Upload {
 // 登录模块
 export namespace Login {
   export interface ReqLoginForm {
-    username: string;
+    code: string;
     password: string;
   }
   export interface ResLogin {
@@ -87,4 +92,19 @@ export namespace User {
     name: string;
     children?: ResDepartment[];
   }
+}
+
+// 审核分页
+export interface RequestPage {
+  pageSize: number;
+  pageNum: number;
+  orderByCode: number;
+}
+
+// 审核分页返回
+export interface ResponsePage {
+  currentPage: number;
+  pageSize: number;
+  pageTotal: number;
+  submissionInfo: any;
 }

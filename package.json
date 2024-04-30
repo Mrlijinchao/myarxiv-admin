@@ -1,9 +1,9 @@
 {
-  "name": "geeker-admin",
+  "name": "myArXiv",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "geeker-admin open source management system",
+  "description": "一个论文预发数据库",
   "author": {
     "name": "Geeker",
     "email": "848130454@qq.com",
@@ -46,7 +46,9 @@
     "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.3.4",
     "js-md5": "^0.7.3",
+    "json-bigint": "^1.0.0",
     "mitt": "^3.0.0",
+    "moment": "^2.29.4",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.36",
     "pinia-plugin-persistedstate": "^3.1.0",

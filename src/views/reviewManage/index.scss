@@ -1,0 +1,42 @@
+.paperBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // width: 50rem;
+  margin-top: 40px;
+}
+.pageStyle {
+  position: fixed;
+  margin-left: 49%;
+  background-color: aliceblue;
+}
+.topArea {
+  width: 100%;
+  .topBar {
+    // position: absolute;
+    // z-index: 1;
+    // flex-direction: column;
+    // width: 85%;
+    // height: 100px;
+    // margin-top: -20px;
+    // margin-left: -20px;
+    // background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .title {
+      // float: left;
+      margin-top: 10px;
+
+      // margin: 20px;
+    }
+    .pageBar {
+      // float: right;
+      margin-top: 10px;
+
+      // margin: 20px;
+    }
+  }
+}

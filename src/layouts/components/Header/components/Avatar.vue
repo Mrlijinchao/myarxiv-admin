@@ -48,7 +48,9 @@ const logout = () => {
 
     // 2.清除 Token
     userStore.setToken("");
-
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("subject");
     // 3.重定向到登陆页
     router.replace(LOGIN_URL);
     ElMessage.success("退出登录成功！");

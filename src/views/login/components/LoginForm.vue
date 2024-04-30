@@ -1,14 +1,14 @@
 <template>
   <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" size="large">
     <el-form-item prop="username">
-      <el-input v-model="loginForm.username" placeholder="用户名：admin / user">
+      <el-input v-model="loginForm.code" placeholder="请输入账号名">
         <template #prefix>
           <el-icon class="el-input__icon"><user /></el-icon>
         </template>
       </el-input>
     </el-form-item>
     <el-form-item prop="password">
-      <el-input type="password" v-model="loginForm.password" placeholder="密码：123456" show-password autocomplete="new-password">
+      <el-input type="password" v-model="loginForm.password" placeholder="请输入密码" show-password autocomplete="new-password">
         <template #prefix>
           <el-icon class="el-input__icon"><lock /></el-icon>
         </template>
@@ -37,7 +37,8 @@ import { useKeepAliveStore } from "@/stores/modules/keepAlive";
 import { initDynamicRouter } from "@/routers/modules/dynamicRouter";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import type { ElForm } from "element-plus";
-import md5 from "js-md5";
+import { ElMessage } from "element-plus";
+// import md5 from "js-md5";
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -47,13 +48,13 @@ const keepAliveStore = useKeepAliveStore();
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef = ref<FormInstance>();
 const loginRules = reactive({
-  username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+  code: [{ required: true, message: "请输入用户名", trigger: "blur" }],
   password: [{ required: true, message: "请输入密码", trigger: "blur" }]
 });
 
 const loading = ref(false);
 const loginForm = reactive<Login.ReqLoginForm>({
-  username: "",
+  code: "",
   password: ""
 });
 
@@ -65,9 +66,22 @@ const login = (formEl: FormInstance | undefined) => {
     loading.value = true;
     try {
       // 1.执行登录接口
-      const { data } = await loginApi({ ...loginForm, password: md5(loginForm.password) });
-      userStore.setToken(data.access_token);
-
+      // md5(loginForm.adminVerifierPassword)
+      const res = await loginApi({ ...loginForm, password: loginForm.password });
+      if (res.code != 200) {
+        ElMessage({
+          showClose: true,
+          message: res.message,
+          type: "warning"
+        });
+        return;
+      }
+      console.log(res.data.token);
+      userStore.setToken(res.data.token);
+      userStore.setUserInfo(res.data.userInfo);
+      localStorage.setItem("isAdmin", res.data.userInfo.isAdmin);
+      localStorage.setItem("userInfo", JSON.stringify(res.data.userInfo));
+      localStorage.setItem("subject", JSON.stringify(res.data.userInfo.subjectObj));
       // 2.添加动态路由
       await initDynamicRouter();
 
@@ -79,7 +93,7 @@ const login = (formEl: FormInstance | undefined) => {
       router.push(HOME_URL);
       ElNotification({
         title: getTimeState(),
-        message: "欢迎登录 Geeker-Admin",
+        message: "欢迎登录 " + res.message.adminVerifier.adminVerifierName,
         type: "success",
         duration: 3000
       });

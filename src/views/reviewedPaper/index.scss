@@ -1,0 +1,32 @@
+.topArea {
+  width: 100%;
+  .topBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    .pageBtn {
+      width: 85%;
+      background-color: white;
+      .paperChange {
+        float: left;
+
+        // margin-top: -15px;
+        // margin-right: 85%;
+        .btnBox {
+          float: left;
+          margin-left: 10px;
+
+          // font-size: 18px;
+          // color: rgb(206 206 29);
+        }
+      }
+      .pageBar {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+.paperBody {
+  margin-top: 50px;
+}

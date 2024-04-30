@@ -1,0 +1,22 @@
+.subjectBody {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  .topBar {
+    margin-bottom: 10px;
+  }
+  .subjectBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 1px;
+    .titleBar {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .btn {
+    margin: 10px 5px;
+  }
+}

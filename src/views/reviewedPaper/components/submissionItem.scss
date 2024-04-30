@@ -1,0 +1,16 @@
+.submissionItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  // margin-top: 8px;
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+  .raw {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .btn {
+    margin-bottom: 5px;
+  }
+}

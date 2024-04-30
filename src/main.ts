@@ -42,4 +42,6 @@ Object.keys(Icons).forEach(key => {
   app.component(key, Icons[key as keyof typeof Icons]);
 });
 
+App.baseUrl = "http://43.139.8.186:8088";
+
 app.use(ElementPlus).use(directives).use(router).use(I18n).use(pinia).mount("#app");

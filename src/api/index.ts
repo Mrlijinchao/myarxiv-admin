@@ -6,6 +6,7 @@ import { ResultData } from "@/api/interface";
 import { ResultEnum } from "@/enums/httpEnum";
 import { checkStatus } from "./helper/checkStatus";
 import { useUserStore } from "@/stores/modules/user";
+import JSONBIG from "json-bigint";
 import router from "@/routers";
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
@@ -18,7 +19,7 @@ const config = {
   // 设置超时时间
   timeout: ResultEnum.TIMEOUT as number,
   // 跨域时候允许携带凭证
-  withCredentials: true
+  withCredentials: false
 };
 
 class RequestHttp {
@@ -26,7 +27,6 @@ class RequestHttp {
   public constructor(config: AxiosRequestConfig) {
     // instantiation
     this.service = axios.create(config);
-
     /**
      * @description 请求拦截器
      * 客户端发送请求 -> [请求拦截器] -> 服务器
@@ -38,7 +38,7 @@ class RequestHttp {
         // 当前请求不需要显示 loading，在 api 服务中通过指定的第三个参数: { noLoading: true } 来控制
         config.noLoading || showFullScreenLoading();
         if (config.headers && typeof config.headers.set === "function") {
-          config.headers.set("x-access-token", userStore.token);
+          config.headers.set("Authorization", userStore.token);
         }
         return config;
       },
@@ -54,6 +54,7 @@ class RequestHttp {
     this.service.interceptors.response.use(
       (response: AxiosResponse) => {
         const { data } = response;
+        // console.log(data);
         const userStore = useUserStore();
         tryHideFullScreenLoading();
         // 登陆失效
@@ -68,6 +69,7 @@ class RequestHttp {
           ElMessage.error(data.msg);
           return Promise.reject(data);
         }
+        // console.log(data);
         // 成功请求（在页面上除非特殊情况，否则不用处理失败逻辑）
         return data;
       },
@@ -84,6 +86,22 @@ class RequestHttp {
         return Promise.reject(error);
       }
     );
+
+    //   // 数据预处理
+    this.service.defaults.transformResponse = [
+      function (data) {
+        if (data instanceof Blob) {
+          return data;
+        }
+        // console.log(data)
+        const json = JSONBIG({
+          storeAsString: true
+        });
+        const res = json.parse(data);
+        console.log(res);
+        return res;
+      }
+    ];
   }
 
   /**
